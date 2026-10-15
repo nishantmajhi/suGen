@@ -1,0 +1,120 @@
+html {
+    color-scheme: light dark;
+}
+
+button {
+    background-color: transparent;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        accent-color: navy;
+        --accent-color: navy;
+        --foreground-color: black;
+        --background-color: white;
+    }
+
+    body {
+        color: var(--foreground-color);
+        background-color: var(--background-color);
+    }
+
+    form {
+        background-color: var(--background-color);
+        box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.13), 0px 1px 4px 0px rgba(0, 0, 0, 0.11);
+    }
+
+    main {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(210, 210, 210, 0.3);
+    }
+    
+    details > summary {
+        color: var(--accent-color);
+    }
+    details>*:not(:first-child):not(:last-child) {
+        border-bottom: 1px solid var(--foreground-color);
+    }
+
+    #reset_button {
+        color: var(--background-color);
+        background-color: var(--accent-color);
+    }
+    #reset_button:focus,
+    #reset_button:hover {
+        background-color: red;
+    }
+
+    select {
+        color: var(--foreground-color);
+        background-color: var(--background-color);
+        border: 1px solid var(--accent-color);
+    }
+
+    footer,
+    footer * {
+        color: var(--accent-color);
+    }
+
+    .notification { 
+        color: var(--background-color);
+        background-color: var(--accent-color);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        accent-color: deepskyblue;
+        --accent-color: deepskyblue;
+        --foreground-color: white;
+        --background-color: #1f1f1f;
+    }
+
+    body {
+        color: var(--foreground-color);
+        background-color: var(--background-color);
+    }
+
+    form {
+        background-color: var(--background-color);
+        box-shadow: 0px 7px 15px 0px rgba(50, 100, 250, 0.1), 0px 1px 4px 0px rgba(50, 100, 250, 0.1);
+    }
+
+    main {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(40, 40, 40, 0.7);
+    }
+    
+    details > summary {
+        color: var(--accent-color);
+    }
+    details > *:not(:first-child):not(:last-child) {
+        border-bottom: 1px solid var(--foreground-color);
+    }
+
+    #reset_button {
+        color: var(--background-color);
+        background-color: var(--accent-color);
+    }
+
+    #reset_button:focus,
+    #reset_button:hover {
+        background-color: red;
+    }
+
+    select {
+        color: var(--foreground-color);
+        background-color: var(--background-color);
+        border: 1px solid var(--accent-color);
+    }
+
+    footer,
+    footer * {
+        color: var(--accent-color);
+    }
+
+    .notification {
+        color: var(--background-color);
+        background-color: var(--accent-color);
+    }
+}

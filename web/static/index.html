@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <title>suGen</title>
+
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/css/colors.css" />
+
+    <script src="/index.js"></script>
+    <script src="/js/notification.js"></script>
+    <script src="/js/copyToClipboard.js"></script>
+
+    <script src="/js/passphrase.js"></script>
+    <script src="/js/password.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <section class="container">
+        <main>
+          <span id="password">Loading...</span>
+          <button type="button" id="copy_password" onclick="copyPassword()">
+            &#10064;
+          </button>
+        </main>
+        <details open>
+          <summary>Password Filters</summary>
+          <article>
+            <label for="mixed_case_in_password">Mixed case</label
+            ><input
+              type="checkbox"
+              checked
+              name="mixed_case_in_password"
+              id="mixed_case_in_password"
+              onchange="updatePassword()"
+            />
+          </article>
+          <article>
+            <label for="password_range" id="password_range_label">Length:</label
+            ><input
+              type="range"
+              min="8"
+              max="24"
+              step="1"
+              value="12"
+              name="password_range"
+              id="password_range"
+              onchange="updatePassword()"
+            />
+          </article>
+          <article>
+            <label for="numbers_in_password">Numbers</label
+            ><input
+              type="checkbox"
+              checked
+              name="numbers_in_password"
+              id="numbers_in_password"
+              onchange="updatePassword()"
+            />
+          </article>
+          <article>
+            <label for="minimum_digits_in_password">Minimum digits</label
+            ><input
+              type="number"
+              min="1"
+              value="3"
+              name="minimum_digits_in_password"
+              id="minimum_digits_in_password"
+              onchange="updatePassword()"
+            />
+          </article>
+          <article>
+            <label for="special_characters_in_password"
+              >Special characters</label
+            ><input
+              type="checkbox"
+              checked
+              name="special_characters_in_password"
+              id="special_characters_in_password"
+              onchange="updatePassword()"
+            />
+          </article>
+          <article>
+            <label for="minimum_special_characters_in_password"
+              >Minimum special character</label
+            ><input
+              type="number"
+              min="1"
+              value="2"
+              name="minimum_special_characters_in_password"
+              id="minimum_special_characters_in_password"
+              onchange="updatePassword()"
+            />
+          </article>
+          <article>
+            <label for="avoid_ambiguous_characters_in_password"
+              >Avoid ambiguous characters</label
+            ><input
+              type="checkbox"
+              checked
+              name="avoid_ambiguous_characters_in_password"
+              id="avoid_ambiguous_characters_in_password"
+              onchange="updatePassword()"
+            />
+          </article>
+        </details>
+      </section>
+      <section class="container">
+        <main>
+          <span id="passphrase">Loading...</span>
+          <button type="button" id="copy_passphrase" onclick="copyPassphrase()">
+            &#10064;
+          </button>
+        </main>
+        <details open>
+          <summary>Passphrase Filters</summary>
+          <article>
+            <label for="passphrase_style">Style</label
+            ><select
+              name="passphrase_style"
+              id="passphrase_style"
+            >
+              <option value="words" selected>Words</option>
+              <option value="adjectiveNoun">Adjective(s) + Noun</option>
+            </select>
+          </article>
+          <article>
+            <label for="capitalize_words_in_passphrase">Capitalize</label
+            ><input
+              type="checkbox"
+              checked
+              name="capitalize_words_in_passphrase"
+              id="capitalize_words_in_passphrase"
+              onchange="updatePassphrase()"
+            />
+          </article>
+          <article>
+            <label for="include_numbers_in_passphrase">Include numbers</label
+            ><input
+              type="checkbox"
+              name="include_numbers_in_passphrase"
+              id="include_numbers_in_passphrase"
+              onchange="updatePassphrase()"
+            />
+          </article>
+          <article id="passphrase_word_count_article">
+            <label for="passphrase_phrase_range" id="passphrase_range_label"
+              >No. of words:</label
+            ><input
+              type="range"
+              min="1"
+              max="5"
+              step="1"
+              value="2"
+              name="passphrase_phrase_range"
+              id="passphrase_phrase_range"
+              onchange="updatePassphrase()"
+            />
+          </article>
+        </details>
+      </section>
+      <section>
+        <button
+          type="button"
+          id="reset_button"
+          title="Regenerate"
+          onclick="initialize()"
+        >
+          &#128472;
+        </button>
+        <footer>
+          With Love from
+          <a href="http://manishmajhi.com.np" target="_blank">Manish Majhi</a>
+        </footer>
+      </section>
+    </form>
+  </body>
+</html>
